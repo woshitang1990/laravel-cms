@@ -19,9 +19,9 @@ class AdminSeeder extends Seeder
         $user->save();
         Role::create([
             'title' => '管理员',
-            'name' => 'admin',
+            'name' => 'webmaster',
             'guard_name' => 'admin',
         ]);
-        $user->assignRole('admin');
+        $user->assignRole('webmaster');
     }
 }
