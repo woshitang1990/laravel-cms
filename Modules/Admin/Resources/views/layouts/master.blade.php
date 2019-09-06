@@ -375,5 +375,6 @@
 <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="{{asset('plugin/pjax/pjax.js')}}"></script>
 <link rel="stylesheet" href="{{asset('plugin/pjax/pjax.css')}}">
+@yield('scripts')
 </body>
 </html>

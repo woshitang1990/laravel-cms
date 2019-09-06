@@ -28,7 +28,7 @@
                     <div class="card-body">
                         <form action="/admin/login" method="post">
                             @csrf
-                            @include('layouts._error')
+                            @include('layouts._validate')
                             <div class="login-form">
                                 <div class="form-group">
                                     <input id="name" type="text" name="name" placeholder="后台账号" value="admin" autocomplete="off" class="form-control">
