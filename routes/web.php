@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::any('/upload', 'UploadController@make')->name('upload');
+Route::any('/upload-simditor', 'UploadController@make');
