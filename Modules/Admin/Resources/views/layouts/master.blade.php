@@ -361,7 +361,10 @@
     </nav>
 </div>
 {{--<script src="{{asset('theme/beagle/lib/jquery/jquery.min.js')}}" type="text/javascript"></script>--}}
-<script src="{{mix('js/app.js')}}"></script>
+{{-- <script src="{{mix('js/app.js')}}"></script> --}}
+<script src="{{mix('js/'.strtolower(\HDModule::currentModule()).'.js')}}"></script>
+<script src="{{asset('plugin/menu.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/'.strtolower(\HDModule::currentModule()).'.css')}}">
 <script src="{{asset('theme/beagle/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}"
         type="text/javascript"></script>
 <script src="{{asset('theme/beagle/js/app.js')}}" type="text/javascript"></script>

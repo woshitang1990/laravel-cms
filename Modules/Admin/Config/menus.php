@@ -19,7 +19,7 @@ return [
         "icon"       => "fa fa-navicon",
         'permission' => '权限标识',
         "menus"      => [
-            ["title" => "角色列表", "permission" => "Modules\Admin\Http\Controllers\RoleController@index", "url" => "admin/role"],
+            ["title" => "角色列表", "permission" => "Modules\Admin\Http\Controllers\RoleController@index", "url" => "/admin/role"],
             ["title" => "修改列表", "permission" => "Modules\Admin\Http\Controllers\RoleController@edit", "url" => "链接地址"],
             ["title" => "删除角色", "permission" => "Modules\Admin\Http\Controllers\RoleController@destroy", "url" => "http:://houdunren.com"],
             ["title" => "添加角色", "permission" => "Modules\Admin\Http\Controllers\RoleController@create", "url" => "/admin/role"],

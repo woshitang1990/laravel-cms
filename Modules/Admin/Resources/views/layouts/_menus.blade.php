@@ -6,7 +6,7 @@
                 <li class="divider">{{$moduleName}}</li>
                 @foreach($groups as $group)
                         @if(\HDModule::hadPermission($group['permission'], 'admin'))
-                            <li class="parent open">
+                            <li class="parent">
                                 <a href="#"><i class="{{$group['icon']}}"></i>&nbsp;<span>{{$group['title']}}</span></a>
                                 <ul class="sub-menu">
                                     @foreach($group['menus'] as $menu)
