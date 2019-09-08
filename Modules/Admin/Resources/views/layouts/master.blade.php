@@ -154,17 +154,7 @@
                data-target="#be-navbar-collapse" class="be-toggle-top-header-menu collapsed">No Sidebar Left</a>
             <div id="be-navbar-collapse" class="navbar-collapse collapse">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="index.html" class="nav-link">系统模块</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
-                           class="nav-link dropdown-toggle">
-                            扩展插件 <span class="mdi mdi-caret-down"></span>
-                        </a>
-                        <div role="menu" class="dropdown-menu">
-                            <a href="form-elements.html" class="dropdown-item">Elements</a>
-                            <a href="form-validation.html" class="dropdown-item">Validation</a>
-                        </div>
-                    </li>
+                    @include('admin::layouts._menus_header')
                 </ul>
             </div>
         </div>
@@ -362,9 +352,12 @@
 </div>
 {{--<script src="{{asset('theme/beagle/lib/jquery/jquery.min.js')}}" type="text/javascript"></script>--}}
 {{-- <script src="{{mix('js/app.js')}}"></script> --}}
-<script src="{{mix('js/'.strtolower(\HDModule::currentModule()).'.js')}}"></script>
+{{-- <script src="{{mix('js/'.strtolower(\HDModule::currentModule()).'.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/'.strtolower(\HDModule::currentModule()).'.css')}}"> --}}
+<script src="{{mix('js/app.js')}}"></script>
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 <script src="{{asset('plugin/menu.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/'.strtolower(\HDModule::currentModule()).'.css')}}">
+
 <script src="{{asset('theme/beagle/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}"
         type="text/javascript"></script>
 <script src="{{asset('theme/beagle/js/app.js')}}" type="text/javascript"></script>

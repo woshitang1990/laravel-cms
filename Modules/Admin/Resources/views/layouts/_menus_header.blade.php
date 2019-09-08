@@ -13,7 +13,7 @@
 <li class="nav-item dropdown">
     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false"
        class="nav-link dropdown-toggle">
-        扩展插件 <span class="mdi mdi-caret-down"></span>
+        扩展插件 </span>
     </a>
     <div role="menu" class="dropdown-menu">
         @foreach(\HDModule::getModulesLists(['Admin','Wx','Base','News']) as $module)

@@ -19,20 +19,18 @@ return [
         "icon"       => "fa fa-navicon",
         'permission' => '权限标识',
         "menus"      => [
-            ["title" => "角色列表", "permission" => "Modules\Admin\Http\Controllers\RoleController@index", "url" => "/admin/role"],
-            ["title" => "修改列表", "permission" => "Modules\Admin\Http\Controllers\RoleController@edit", "url" => "链接地址"],
-            ["title" => "删除角色", "permission" => "Modules\Admin\Http\Controllers\RoleController@destroy", "url" => "http:://houdunren.com"],
-            ["title" => "添加角色", "permission" => "Modules\Admin\Http\Controllers\RoleController@create", "url" => "/admin/role"],
-            ["title" => "修改角色权限", "permission" => "Modules\Admin\Http\Controllers\RoleController@permission", "url" => "/admin/role"],
+            ["title" => "角色管理", "permission" => "Modules\Admin\Http\Controllers\RoleController@index", "url" => "/admin/role"],
+            ["title" => "模块管理", "permission" => "Modules\Admin\Http\Controllers\RoleController@edit", "url" => "链接地址"],
+            ["title" => "网站配置", "permission" => "Modules\Admin\Http\Controllers\RoleController@destroy", "url" => "http:://houdunren.com"],
+            ["title" => "邮件通知设置", "permission" => "Modules\Admin\Http\Controllers\RoleController@destroy", "url" => "http:://houdunren.com"],
         ],
     ],
     'Article' => [
-        "title"      => "文章管理",
+        "title"      => "微信管理",
         "icon"       => "fa fa-navicon",
         'permission' => '权限标识',
         "menus"      => [
-            ['title' => '添加栏目', 'permission' => 'Modules\Admin\Http\Controllers\CategoryController@create',  "url" => "链接地址"],
-            ['title' => '修改栏目', 'permission' => 'Modules\Admin\Http\Controllers\CategoryController@edit',  "url" => "链接地址"],
+            ['title' => '微信配置', 'permission' => 'Modules\Admin\Http\Controllers\CategoryController@create',  "url" => "链接地址"],
         ],
     ],
 ];
