@@ -13,7 +13,12 @@
                         <thead>
                         <tr>
                             <th style="width: 10%;">编号</th>
-                            <th>标题</th><th>作者</th><th>内容</th><th>缩略图</th><th>查看次数</th><th>推荐</th>
+                            <th>标题</th>
+                            <th>栏目</th>
+                            <th>作者</th>
+                            <th>缩略图</th>
+                            <th>查看次数</th>
+                            <th>置顶</th>
                             <th>创建时间</th>
                             <th>修改时间</th>
                             <th>&nbsp;</th>
@@ -23,7 +28,10 @@
                         @foreach($data as $d)
                             <tr>
                                 <td>{!! $d['id'] !!}</td>
-                                <td>{!! $d['title'] !!}</td><td>{!! $d['author'] !!}</td><td>{!! $d['content'] !!}</td><td><img src='{!! $d['thumb'] !!}' style='width:45px;height:45px;'/></td><td>{!! $d['click'] !!}</td><td>{!! $d['iscommend'] !!}</td>
+                                <td>{!! $d['title'] !!}</td>
+                                <td>{!! $d->category['name'] !!}</td>
+                                <td>{!! $d['author'] !!}</td><td><img src='{!! $d['thumb'] !!}' style='width:45px;height:45px;'/></td><td>{!! $d['click'] !!}</td>
+                                <td>{!! $d['istop']==1?'是':'否' !!}</td>
                                 <td>{!! $d['created_at'] !!}</td>
                                 <td>{!! $d['updated_at'] !!}</td>
                                 <td class="text-right">

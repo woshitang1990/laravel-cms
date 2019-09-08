@@ -21,6 +21,18 @@
             </span>
         @endif
     </div>
+
+</div>
+<div class="form-group row">
+    <label for="category_id" class="col-12 col-sm-3 col-form-label text-md-right">栏目</label>
+    <div class="col-12 col-md-9">
+
+          <select class="form-control-sm" name="category_id" id="category_id">
+            @foreach($categories as $category)
+            <option value="{{$category['id']}}">{{$category['name']}}</option>
+            @endforeach
+          </select>
+    </div>
 </div>
 <div class="form-group row">
     <label for="author" class="col-12 col-sm-3 col-form-label text-md-right">作者</label>
@@ -60,7 +72,7 @@
 <div class="form-group row">
     <label for="click" class="col-12 col-sm-3 col-form-label text-md-right">查看次数</label>
     <div class="col-12 col-md-9">
-        <input id="click" name="click" type="text"
+        <input id="click" name="click" type="number"
                value="{{ $content['click']??old('click') }}"
                class="form-control form-control-sm form-control{{ $errors->has('click') ? ' is-invalid' : '' }}">
         @if ($errors->has('click'))
@@ -71,25 +83,25 @@
     </div>
 </div>
 <div class="form-group row">
-    <label for="iscommend" class="col-12 col-sm-3 col-form-label text-md-right" style="padding-top:initial;">推荐</label>
+    <label for="istop" class="col-12 col-sm-3 col-form-label text-md-right" style="padding-top:initial;">置顶</label>
     <div class="col-12 col-md-9">
                     <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
-                           {{old('iscommend',$content['iscommend'])=='1'?'checked':''}}
-                           name="iscommend" value="1"
-                           id="iscommend-1">
-                    <label class="form-check-label" for="iscommend-1">是</label>
+                           {{old('istop',$content['istop'])=='1'?'checked':''}}
+                           name="istop" value="1"
+                           id="istop-1">
+                    <label class="form-check-label" for="istop-1">是</label>
            </div>            <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio"
-                           {{old('iscommend',$content['iscommend'])=='2'?'checked':''}}
-                           name="iscommend" value="2"
-                           id="iscommend-2">
-                    <label class="form-check-label" for="iscommend-2">否</label>
+                           {{old('istop',$content['istop'])=='2'?'checked':''}}
+                           name="istop" value="2"
+                           id="istop-2">
+                    <label class="form-check-label" for="istop-2">否</label>
            </div>
         <br>
-        @if ($errors->has('iscommend'))
+        @if ($errors->has('istop'))
             <span class="text-danger">
-                <strong>{{ $errors->first('iscommend') }}</strong>
+                <strong>{{ $errors->first('istop') }}</strong>
             </span>
         @endif
     </div>

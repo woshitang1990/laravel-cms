@@ -4,6 +4,7 @@ namespace Modules\Article\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Modules\Article\Entities\Category;
 use Modules\Article\Entities\Content;
 use Modules\Article\Http\Requests\ContentRequest;
 
@@ -17,9 +18,10 @@ class ContentController extends Controller
     }
 
     //创建视图
-    public function create(Content $content)
+    public function create(Content $content, Category $category)
     {
-        return view('article::content.create', compact('content'));
+        $categories = $category->getAll();
+        return view('article::content.create', compact('content', 'categories'));
     }
 
     //保存数据
@@ -38,9 +40,10 @@ class ContentController extends Controller
     }
 
     //编辑视图
-    public function edit(Content $content)
+    public function edit(Content $content, Category $category)
     {
-        return view('article::content.edit', compact('content'));
+        $categories = $category->getAll();
+        return view('article::content.edit', compact('content', 'categories'));
     }
 
     //更新数据
