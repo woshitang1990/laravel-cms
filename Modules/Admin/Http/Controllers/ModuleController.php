@@ -23,6 +23,12 @@ class ModuleController extends Controller
         return back()->with('success', '模块更新成功！');
     }
 
+    public function setDefault(Module $module)
+    {
+        $module->setDefault();
+        return back()->with('success', '默认模块设置成功！');
+    }
+
     //创建视图
     public function create(Module $module)
     {

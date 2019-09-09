@@ -25,6 +25,7 @@ Route::group(
     ['middleware' => ['web', 'auth:admin'], 'prefix' => 'admin', 'namespace' => "Modules\Admin\Http\\Controllers"],
     function () {
         Route::resource('module', 'ModuleController');
+        Route::get('module_set_default/{module}', 'ModuleController@setDefault');
         Route::get('module_update_cache', 'ModuleController@updateCache');
     }
 );

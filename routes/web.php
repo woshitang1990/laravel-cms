@@ -11,10 +11,13 @@
 |
 */
 
+use Modules\Admin\Entities\Module;
 
-Route::get('/', function () {
+Route::get('/', function (Module $module) {
     //return view('welcome');
-    return app()->build(\Modules\Article\Http\Controllers\HomeController::class)->index();
+    $module = $module->getDefaultModule();
+    $class = '\Modules\\' . $module['name'] . '\Http\Controllers\HomeController';
+    return app()->build($class)->index();
 });
 
 Auth::routes();
