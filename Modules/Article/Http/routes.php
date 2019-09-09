@@ -11,5 +11,7 @@ Route::group(
     ['middleware' => ['web', 'auth:admin'], 'prefix' => 'article', 'namespace' => "Modules\Article\Http\\Controllers"],
     function () {
         Route::resource('content', 'ContentController');
+        Route::get('template', 'TemplateController@index');
+        Route::get('template/set/{name}', 'TemplateController@setDefaultTemplate');
     }
 );

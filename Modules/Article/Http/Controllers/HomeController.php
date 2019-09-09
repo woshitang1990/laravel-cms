@@ -5,17 +5,34 @@ namespace Modules\Article\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use View;
+use App;
+use Illuminate\View\FileViewFinder;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $template = \HDModule::config('article.config.template');
+        $path = [public_path('templates/' . $template)];
+        View::setFinder(new FileViewFinder(App::make('files'), $path));
+    }
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index()
     {
-        dump('33');
+        return view('index');
     }
+
+
+    public function lists()
+    { }
+
+    public function content()
+    { }
 
     /**
      * Show the form for creating a new resource.

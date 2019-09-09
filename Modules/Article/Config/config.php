@@ -1,5 +1,4 @@
-<?php
-
-return [
-    'name' => 'Article'
-];
+<?php return array (
+  'name' => 'Article',
+  'template' => 'default',
+);
