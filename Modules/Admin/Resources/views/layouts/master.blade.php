@@ -355,7 +355,7 @@
 {{-- <script src="{{mix('js/'.strtolower(\HDModule::currentModule()).'.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/'.strtolower(\HDModule::currentModule()).'.css')}}"> --}}
 <script src="{{mix('js/app.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/app.css')}}">
+{{-- <link rel="stylesheet" href="{{asset('css/app.css')}}"> --}}
 <script src="{{asset('plugin/menu.js')}}"></script>
 
 <script src="{{asset('theme/beagle/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js')}}"

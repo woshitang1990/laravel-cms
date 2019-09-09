@@ -11,8 +11,10 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return app()->build(\Modules\Article\Http\Controllers\HomeController::class)->index();
 });
 
 Auth::routes();
