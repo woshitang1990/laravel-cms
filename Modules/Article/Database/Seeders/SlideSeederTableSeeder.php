@@ -4,9 +4,9 @@ namespace Modules\Article\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Article\Entities\Content;
+use Modules\Article\Entities\Slide;
 
-class ArticleDatabaseSeeder extends Seeder
+class SlideSeederTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,9 +16,7 @@ class ArticleDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
+        factory(Slide::class, 5)->create();
         // $this->call("OthersTableSeeder");
-        $this->call(ContentSeederTableSeeder::class);
-        $this->call(SlideSeederTableSeeder::class);
     }
 }

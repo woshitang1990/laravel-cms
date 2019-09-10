@@ -8,14 +8,18 @@ use Illuminate\Routing\Controller;
 use View;
 use App;
 use Illuminate\View\FileViewFinder;
+use Modules\Article\Entities\Category;
+use Modules\Article\Entities\Content;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
         $template = \HDModule::config('article.config.template');
-        $path = [public_path('templates/' . $template)];
-        View::setFinder(new FileViewFinder(App::make('files'), $path));
+        //$path = [public_path('templates/' . $template)];
+        //View::setFinder(new FileViewFinder(App::make('files'), $path));
+        $finder = app('view')->getFinder();
+        $finder->prependLocation(public_path('templates/' . $template));
     }
 
     /**
@@ -28,11 +32,16 @@ class HomeController extends Controller
     }
 
 
-    public function lists()
-    { }
+    public function lists(Category $category)
+    {
+        $data = Content::where('category_id', $category['id'])->paginate(1);
+        return view('lists', compact('data', 'category'));
+    }
 
-    public function content()
-    { }
+    public function content(Content $content)
+    {
+        return view('content', compact('content'));
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -27,6 +27,7 @@ class SlideRequest extends FormRequest
             'pic.required' => '图片 不能为空',
             'click.required' => '点击数 不能为空',
             'enable.required' => '状态 不能为空',
+
         );
     }
 

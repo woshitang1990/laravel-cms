@@ -4,6 +4,7 @@ namespace Modules\Article\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Article\Services\TagService;
 
 class ArticleServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,7 @@ class ArticleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        (new TagService())->make();
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
@@ -46,10 +48,11 @@ class ArticleServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('article.php'),
+            __DIR__ . '/../Config/config.php' => config_path('article.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'article'
+            __DIR__ . '/../Config/config.php',
+            'article'
         );
     }
 
@@ -62,11 +65,11 @@ class ArticleServiceProvider extends ServiceProvider
     {
         $viewPath = resource_path('views/modules/article');
 
-        $sourcePath = __DIR__.'/../Resources/views';
+        $sourcePath = __DIR__ . '/../Resources/views';
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/article';
@@ -85,7 +88,7 @@ class ArticleServiceProvider extends ServiceProvider
         if (is_dir($langPath)) {
             $this->loadTranslationsFrom($langPath, 'article');
         } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'article');
+            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'article');
         }
     }
 
@@ -96,7 +99,7 @@ class ArticleServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
+        if (!app()->environment('production')) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }
     }
