@@ -12,7 +12,7 @@ class CreateModulesTable extends Migration
         Schema::create('modules', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string('titles')->comment('模块名称|input');
+            $table->string('title')->comment('模块名称|input');
             $table->string('name')->comment('模块标识|input');
             $table->tinyInteger('is_default')->comment('是否默认模块|radio');
             $table->tinyInteger('front_access')->comment('前台访问|radio');

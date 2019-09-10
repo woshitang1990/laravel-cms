@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\MailCheckMiddleware;
 use Houdunwang\Module\Middlewares\PermissionMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -54,6 +55,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'check.mail' => MailCheckMiddleware::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
