@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class RegisterMailNotification extends Notification
+class RegisterMailNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -42,6 +42,7 @@ class RegisterMailNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        sleep(10);
         return (new MailMessage)
             ->subject('验证邮箱')
             ->greeting(config('app.name'))

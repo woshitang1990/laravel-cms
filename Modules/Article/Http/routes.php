@@ -26,8 +26,17 @@ Route::group(
 
 //slide-route
 Route::group(
-    ['middleware' => ['web', 'auth:admin'], 'prefix' => 'article', 'namespace' => "Modules\Article\Http\\Controllers"],
+    ['middleware' => ['web', 'auth:web'], 'prefix' => 'article', 'namespace' => "Modules\Article\Http\\Controllers"],
     function () {
         Route::resource('slide', 'SlideController');
+    }
+);
+
+
+//comment-route
+Route::group(
+    ['middleware' => ['web'], 'prefix' => 'article', 'namespace' => "Modules\Article\Http\\Controllers"],
+    function () {
+        Route::resource('comment', 'CommentController');
     }
 );
